@@ -23,3 +23,5 @@ The base command is $ python3 Cliquer.py n
     n being the argument for the number of clicks you want. It is a manditory argument. 
     
     there is one optional argument --fixed, allowing the user to specify a fixed location on screen to click. 
+        This allows for the user to do other tasks while the autoclicker is running, however the activity/window 
+        the autoclicker is clicking must stay visible. 
