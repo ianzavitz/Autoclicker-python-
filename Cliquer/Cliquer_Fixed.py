@@ -34,7 +34,7 @@ def on_click(x, y, button, pressed):
         time.sleep(5)
 
         #history stores values for average time calculation
-        history = [2]
+        history = [d]
         
         #n iterations
         i=0
