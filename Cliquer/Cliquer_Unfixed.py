@@ -34,7 +34,7 @@ time.sleep(5)
 
 
 
-history = [2]
+history = [d]
 i=0
 while(i<n):
     #random delay addition of 0 to 1 second
