@@ -6,7 +6,7 @@ Clone this repository into the directory you wish to to run it from
 
 Libraries used by this script: os, sys, time, random, statistics, argparse, pyautogui, pynput
     
-You may need to install some of the libraries with the command below
+You may need to install some of the libraries with the command below, replacing library_name with the name of the needed library 
     
     $ pip install library_name
     or
