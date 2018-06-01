@@ -9,7 +9,7 @@ import statistics as s
 parser = argparse.ArgumentParser()
 
 parser.add_argument("n", help="Number of clicks",type=int)
-parser.add_argument("-d", help="Delay between clicks", type=int)
+parser.add_argument("-d", help="Delay between clicks", type=float)
 parser.add_argument("--random",help="Enable Delay Variation/Randomization", default=False, action='store_const', const=True)
 
 args = parser.parse_args()
