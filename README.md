@@ -31,6 +31,6 @@ The base command is $ python3 Cliquer.py n
         
         --random adds a random additional delay between clicks between 0 and 1 second
         
-        
-    
-    
+       
+To pause the script, use the shell command [control]-Z. To resume, type and enter fg. 
+To end the script, use the shell command [control]-C
