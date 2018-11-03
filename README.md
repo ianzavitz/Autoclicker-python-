@@ -18,14 +18,14 @@ You may need to install some of the libraries with the command below, replacing 
 
 Using the command line, navigate to the directory Cliquer is saved. 
 
-The base command is $ python3 Cliquer.py n 
+The base command is $ python3 Cliquer.py n -d -r --fixed
 
     n being the integer argument for the number of clicks you want. It is a manditory argument. 
     
     Optional arguments
-        -d is the base delay between clicks in seconds (float)
+        -d is the base delay between clicks in seconds (float) default = 1
         
-        -r adds a random additional delay between (float) -r and (float) r in seconds
+        -r adds a random additional delay between (float) -r and (float) r in seconds default = 0
     
         --fixed, allowing the user to specify a fixed location on screen to click. 
         This allows for the user to do other tasks while the autoclicker is running, however the activity/window 
