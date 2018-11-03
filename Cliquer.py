@@ -33,7 +33,7 @@ def on_click(x, y, button, pressed):
                     rand_adj = rand_ratio * r
                     delay = d + rand_adj
                     #natural mouse position recorded
-                    returnPos = pyag.position()
+                    return_pos = pyag.position()
                     #click and then move back to natural mouse position
                     pyag.click(x=loc[0],y=loc[1])
                     pyag.moveTo(return_pos[0],return_pos[1])
