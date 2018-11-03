@@ -1,3 +1,5 @@
+#This script created by Ian Zavitz
+
 import time
 import sys
 import random
@@ -8,8 +10,8 @@ from pynput import mouse,keyboard
 
 parser = argparse.ArgumentParser()
 parser.add_argument("n", help="Number of clicks",type=int)
-parser.add_argument("-d", help="Delay between clicks", type=float, default=1)
-parser.add_argument("-r",help="Randomization Radius", type=float, default=0)
+parser.add_argument("-d", help="Delay between clicks (seconds)", type=float, default=1)
+parser.add_argument("-r",help="Randomization (seconds)", type=float, default=0)
 parser.add_argument("--fixed", help="Enable Fixed Click Location", default=False, action='store_const', const=True)
 
 args = parser.parse_args()
