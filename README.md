@@ -18,7 +18,7 @@ You may need to install some of the libraries with the command below, replacing 
 
 Using the command line, navigate to the directory Cliquer is saved. 
 
-The base command is $ python3 Cliquer.py n -d -r --fixed
+The base command is $ python3 Cliquer.py n 
 
     n being the integer argument for the number of clicks you want. It is a manditory argument. 
     
