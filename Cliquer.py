@@ -32,8 +32,8 @@ def on_click(x, y, button, pressed):
                     #calculate delay with randomization
                     rand_ratio = random.randint(-100,100)/100
                     if(args.humanlike==True):
-                        rand_ratio_2 = random.randint(-100,100)/100
-                        rand_ratio_3 = random.randint(-100,100)/100
+                        rand_ratio_2 = random.randint(-100,100)/10000
+                        rand_ratio_3 = random.randint(-100,100)/10000
                     rand_adj = rand_ratio * r
                     delay = d + rand_adj
                     #natural mouse position recorded
@@ -41,12 +41,15 @@ def on_click(x, y, button, pressed):
                     #click and then move back to natural mouse position
                     #if human-like is selected this will add a random, small movement in x and y
                     if(args.humanlike==True):
-                        pyag.moveTo(loc[0]+rand_ratio_2/100, loc[1]+rand_ratio_3/100, duration=rand_ratio/10)
+                        pyag.moveTo(loc[0]+rand_ratio_2, loc[1]+rand_ratio_3, duration=rand_ratio/10)
                     else:
                         pyag.moveTo(loc[0],loc[1])
                     pyag.click()
-                    pyag.moveTo(return_pos[0], return_pos[1], duration=rand_ratio*2/10)
-                    #process delay and record it in delay_log
+                    if(args.humanlike==True):
+                        pyag.moveTo(return_pos[0], return_pos[1], duration=rand_ratio*2/10)
+                    else:
+                        pyag.moveTo(return_pos[0], return_pos[1])
+                        #process delay and record it in delay_log
                     time.sleep(delay)
                     if(len(delay_log)==0):
                         delay_log = [delay]
