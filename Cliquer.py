@@ -13,6 +13,7 @@ parser.add_argument("n", help="Number of clicks",type=int)
 parser.add_argument("-d", help="Delay between clicks (seconds)", type=float, default=1)
 parser.add_argument("-r",help="Randomization (seconds)", type=float, default=0)
 parser.add_argument("--fixed", help="Enable Fixed Click Location", default=False, action='store_const', const=True)
+parser.add_argument("--humanlike", help="Adds some slight variation to clicking locations and mouse movement speed", default=False, action='store_const', const=True)
 
 args = parser.parse_args()
 
@@ -30,13 +31,21 @@ def on_click(x, y, button, pressed):
                 for i in range(n):
                     #calculate delay with randomization
                     rand_ratio = random.randint(-100,100)/100
+                    if(args.humanlike==True):
+                        rand_ratio_2 = random.randint(-100,100)/100
+                        rand_ratio_3 = random.randint(-100,100)/100
                     rand_adj = rand_ratio * r
                     delay = d + rand_adj
                     #natural mouse position recorded
                     return_pos = pyag.position()
                     #click and then move back to natural mouse position
-                    pyag.click(x=loc[0],y=loc[1])
-                    pyag.moveTo(return_pos[0],return_pos[1])
+                    #if human-like is selected this will add a random, small movement in x and y
+                    if(args.humanlike==True):
+                        pyag.moveTo(loc[0]+rand_ratio_2/100, loc[1]+rand_ratio_3/100, duration=rand_ratio/10)
+                    else:
+                        pyag.moveTo(loc[0],loc[1])
+                    pyag.click()
+                    pyag.moveTo(return_pos[0], return_pos[1], duration=rand_ratio*2/10)
                     #process delay and record it in delay_log
                     time.sleep(delay)
                     if(len(delay_log)==0):
